@@ -1,4 +1,39 @@
 # OCS2 Toolbox
+## Installation
+
+Create a folder:
+> mkdir -p ~/ocs2_ws/src && cd ~/ocs2_ws/src
+
+Clone necessary packages:
+> git clone git@github.com:leggedrobotics/ocs2.git
+> 
+> git clone --recurse-submodules https://github.com/leggedrobotics/pinocchio.git
+> 
+> git clone --recurse-submodules https://github.com/leggedrobotics/hpp-fcl.git
+>
+> git clone https://github.com/leggedrobotics/elevation_mapping_cupy.git
+>
+> git clone https://github.com/ANYbotics/grid_map.git
+>
+> git clone https://github.com/leggedrobotics/ocs2_robotic_assets.git
+
+Install dependencies:
+> sudo apt install liburdfdom-dev liboctomap-dev libassimp-dev
+>
+> sudo apt install -y ros-noetic-pybind11-catkin ros-noetic-grid-map-core ros-noetic-grid-map-msgs libopencv-dev libeigen3-dev libgmp-dev libmpfr-dev libboost-all-dev
+>
+> sudo apt install libeigen3-dev
+>
+> sudo apt-get install ros-noetic-rqt-multiplot
+>
+
+Build:
+> cd ~/ocs2_ws
+>
+> rosdep install --from-path src --ignore-src -ry 
+>
+> catkin build -DCMAKE_BUILD_TYPE=Release
+
 
 ## Summary
 OCS2 is a C++ toolbox tailored for Optimal Control for Switched Systems (OCS2). The toolbox provides an efficient implementation of the following algorith
